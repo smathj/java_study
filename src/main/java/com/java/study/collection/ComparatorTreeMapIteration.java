@@ -10,9 +10,11 @@ import java.util.TreeMap;
 class AgeComparator implements Comparator<Integer> {
     @Override
     public int compare(Integer n1, Integer n2) {
-//        System.out.println("=========================================");
+//        System.out.println("-------------------------------------------------");
 //        System.out.println("n1 : " + n1.intValue());
 //        System.out.println("n2 : " + n2.intValue());
+//        System.out.println("result :" + (n2.intValue() - n1.intValue()));
+
         return n2.intValue() - n1.intValue();
     }
 }
@@ -30,26 +32,26 @@ public class ComparatorTreeMapIteration {
         // Key만 담고 있는 컬렉션 인스턴스 생성
         Set<Integer> ks = map.keySet();
 
-        System.out.println("==============================================");
+//        System.out.println("==============================================");
 
         for (Integer n : ks) {
             System.out.print(n.toString() + "\t");
         }
         System.out.println();
-        System.out.println("==============================================");
+//        System.out.println("==============================================");
 
         // 전체 Value 출력
         for (Integer n : ks) {
             System.out.print(map.get(n).toString() + "\t");
         }
         System.out.println();
-        System.out.println("==============================================");
+//        System.out.println("==============================================");
 
         // 전체 Value 출력 ( 반복자 기반 )
         for (Iterator<Integer> itr = ks.iterator(); itr.hasNext(); ) {
             System.out.print(map.get(itr.next())  + "\t");
         }
         System.out.println();
-        System.out.println("==============================================");
+//        System.out.println("==============================================");
     }
 }
