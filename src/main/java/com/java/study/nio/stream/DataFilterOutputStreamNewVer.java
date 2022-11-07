@@ -12,6 +12,7 @@ public class DataFilterOutputStreamNewVer {
 //        Path fp = Paths.get("data.dat");
         Path fp = Paths.get("");
 
+        // 현재클래스가 있는 디렉토리 위치에 파일 생성 하려면 ?
         Class<DataFilterOutputStreamNewVer> myClass = DataFilterOutputStreamNewVer.class;
         String thisPath = "src\\main\\java\\" + (myClass.getPackage().toString().split(" "))[1].replace(".", "\\");
 
