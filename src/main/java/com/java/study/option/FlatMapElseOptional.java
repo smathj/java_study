@@ -3,8 +3,8 @@ package com.java.study.option;
 import java.util.Optional;
 
 class ContInfo {
-    Optional<String> phone;   // null �� �� ����
-    Optional<String> adrs;    // null �� �� ����
+    Optional<String> phone;
+    Optional<String> adrs;
 
     public ContInfo(Optional<String> ph, Optional<String> ad) {
         phone = ph;

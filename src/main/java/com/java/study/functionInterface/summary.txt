@@ -1,0 +1,22 @@
+표준 내장 함수형 인터페이스
+
+Predicate<T>
+- boolean test(T t)  전달된 인자를 대상으로 true,false
+
+Consumer<T>
+- void accept(T t) 전달된 인자 기반으로 "반환" 이외의 다른 결과를 보일때
+
+Supplier<T>
+- T get()   단순히 무엇인가 반환할 때
+
+Function<T,R>
+- T 파라미터타입, R 리턴타입
+- R apply(T t) 전달 인자와 반환 값이 모두 존재할때
+
+UnaryOperator<T>
+- T apply(T t)
+
+BinaryOperator<T>
+- T apply(T t1, T t2)
+
+
