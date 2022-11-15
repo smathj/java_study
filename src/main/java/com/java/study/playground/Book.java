@@ -16,7 +16,7 @@ public class Book {
         private int price;
 
         // ? 선택사항
-        private String writer;
+        private String writer;  // 초기화를 안한다면 디폴트로 초기화됨을 인지
 
         // 정적 클래스의 필수 입력 생성자
         public Builder(String title, int price) {
@@ -63,6 +63,10 @@ public class Book {
 
     public int getPrice() {
         return price;
+    }
+
+    public String getWriter() {
+        return writer;
     }
 
     @Override

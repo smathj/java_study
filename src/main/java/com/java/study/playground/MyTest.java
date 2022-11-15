@@ -13,8 +13,6 @@ public class MyTest {
         // writer 변수를 빈문자열로 초기화 시켜두거나, null 임을 명확히 인지하자
         System.out.println("firstBook = " + firstBook);
 
-        System.out.println();
-
 
         Book secondBook = new Book
                 .Builder("자바책", 1000)
