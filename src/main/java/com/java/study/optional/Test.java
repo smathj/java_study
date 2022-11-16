@@ -31,6 +31,10 @@ public class Test {
                              .filter((m) -> m.getAge() > 30)
                              .findFirst()
                              .orElseGet(Member::new); // 값이있으면 반환, 없으면 람다식 실행
+//                             .orElseGet(() -> new Member()); // 값이있으면 반환, 없으면 람다식 실행
+//                             .orElseGet(() -> {
+//                                 return new Member();
+//                             }); // 값이있으면 반환, 없으면 람다식 실행
 
         System.out.print("3 : ");
         System.out.println(mem2);
