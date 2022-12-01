@@ -14,12 +14,12 @@ public class Bag {
     }
 
 
-    public static InnerClassBuilder Builder() {
+    protected static InnerClassBuilder Builder() {
         return new InnerClassBuilder();
     }
 
 
-    public static class InnerClassBuilder {
+    protected static class InnerClassBuilder {
         private String name;
         private int price;
         private String brand;
