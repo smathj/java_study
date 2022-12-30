@@ -35,7 +35,7 @@ public class Reg01 {
 
 
         // * 핸드폰
-        boolean test6 = Pattern.matches("01[0-9]-\\d{3,4}-\\d{4}", "010-2073-5689");
+        boolean test6 = Pattern.matches("01[0-9]-\\d{3,4}-\\d{4}", "010-1234-5678");
         System.out.println("test6 = " + test6);
 
 
@@ -48,8 +48,6 @@ public class Reg01 {
 
 
         // * 주민등록번호 123456-1234567 6자리, 7자리
-        //                                     92     12 31
-        //                                            06 06
         boolean test9 = Pattern.matches("\\d{2}[0-1][0-9][0-3][0-9]-[1-4]\\d{6}", "123456-1234567");
         System.out.println("test9 = " + test9);
 
