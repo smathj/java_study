@@ -19,6 +19,29 @@ public class DecimalFormatEx2 {
 
             System.out.println(df2.format(num));
 
+
+            int intValue = num.intValue();
+            System.out.println("intValue = " + intValue);
+
+            long longValue = num.longValue();
+            System.out.println("longValue = " + longValue);
+
+            float floatValue = num.floatValue();
+            System.out.println("floatValue = " + floatValue);
+
+
+            float f1 = 1f;
+            double d1 = 1;
+
+            short s1 = 1;
+            char c1 = 'a';
+
+            System.out.println("c1 = " + c1);
+
+
+
+
+
         } catch(Exception e) {
             e.printStackTrace();
         }
