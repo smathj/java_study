@@ -29,7 +29,7 @@ public class MyTest {
                 return 0;
             }
             // v2.
-//            return o1.getAge().compareTo(o2.getAge());
+//            return o1.getAge().compareTo(o2.getAge());    // (정렬은 내부 기본 셋팅을 따른다)
         });
 
         System.out.println("[나이-오름차순] people = " + people);
@@ -47,19 +47,21 @@ public class MyTest {
                 return 0;
             }
             // v2.
-//            return o2.getAge().compareTo(o1.getAge());
+//            return o2.getAge().compareTo(o1.getAge());     // (정렬은 내부 기본 셋팅을 따른다)
         });
 
         System.out.println("[나이-내림차순] people = " + people);
         lineLog();
 
-        
+
+        // (정렬은 내부 기본 셋팅을 따른다)
         List<Human> collect = people.stream()
                 .sorted((o1, o2) -> o1.getAge().compareTo(o2.getAge())).collect(Collectors.toList());
         System.out.println("[람다-나이-오름차순] people = " + collect);
         lineLog();
 
 
+        // (정렬은 내부 기본 셋팅을 따른다)
         List<Human> collect2 = people.stream()
                 .sorted((o1, o2) -> o2.getAge().compareTo(o1.getAge())).collect(Collectors.toList());
         System.out.println("[람다-나이-내림차순] people = " + collect2);
