@@ -1,4 +1,4 @@
-package com.java.study.standard.cp15_io;
+package com.java.study.standard.cp15_io.bytebase;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
