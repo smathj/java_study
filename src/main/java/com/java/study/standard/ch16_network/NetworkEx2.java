@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-public class Network2 {
+public class NetworkEx2 {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
 
