@@ -35,9 +35,12 @@ public class TcpIpServer4 implements Runnable {
     }
 
     public void start() {
+        System.out.println("여기");
+        System.out.println(this);
+
         for (int i = 0; i < threadArr.length; i++) {
-            Thread thread = threadArr[i];
-            thread.start();
+            threadArr[i] = new Thread(this);
+            threadArr[i].start();
         }
     }
 
@@ -46,8 +49,6 @@ public class TcpIpServer4 implements Runnable {
 
             try {
                 System.out.println(getTime() + "연결 요청을 기다립니다");
-
-                serverSocket.setSoTimeout(5 * 1000);
 
                 Socket socket = serverSocket.accept();
 
