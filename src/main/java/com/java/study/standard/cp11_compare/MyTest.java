@@ -56,14 +56,16 @@ public class MyTest {
 
         // (정렬은 내부 기본 셋팅을 따른다)
         List<Human> collect = people.stream()
-                .sorted((o1, o2) -> o1.getAge().compareTo(o2.getAge())).collect(Collectors.toList());
+                .sorted((o1, o2) -> o1.getAge().compareTo(o2.getAge()))
+                .collect(Collectors.toList());
         System.out.println("[람다-나이-오름차순] people = " + collect);
         lineLog();
 
 
         // (정렬은 내부 기본 셋팅을 따른다)
         List<Human> collect2 = people.stream()
-                .sorted((o1, o2) -> o2.getAge().compareTo(o1.getAge())).collect(Collectors.toList());
+                .sorted((o1, o2) -> o2.getAge().compareTo(o1.getAge()))
+                .collect(Collectors.toList());
         System.out.println("[람다-나이-내림차순] people = " + collect2);
 
 
