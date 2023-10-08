@@ -10,9 +10,11 @@ public class StreamEx2_8 {
 
         List<Book> list = Arrays.asList(new Book("나", 1000, 3),
                 new Book("가", 2000, 1),
-                new Book("라", 3000, 4),
+                new Book("라", 2000, 4),
                 new Book("마", 1000, 5),
-                new Book("다", 4000, 2)
+                new Book("바", 1000, 6),
+                new Book("사", 2000, 7),
+                new Book("다", 1000, 2)
         );
 
         list.stream()
