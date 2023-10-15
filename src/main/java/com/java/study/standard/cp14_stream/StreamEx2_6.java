@@ -17,9 +17,9 @@ public class StreamEx2_6 {
         );
 
         // 복습 1
-        /*
+/*
         list.stream()
-                // .sorted(Comparator.comparing(b1 -> b1.getPrice()).reversed())     // 람다식 에러
+                // .sorted(Comparator.comparing(b1 -> b1.getPrice()).reversed())     // Comparator + 람다식 짬봉 에러
                 .sorted(Comparator.comparing(Book::getPrice).reversed()
 //                        .thenComparing(Book::getName).reversed()
                         .thenComparing(Book::getSeq))            // 메서드참조

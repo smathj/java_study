@@ -76,7 +76,7 @@ public class CollectEx_4 {
 
         System.out.printf("1. 단순그룹화(반별로 그룹화)%n");
         Map<Integer, List<Student>> stuByBan = Stream.of(stuArr)
-                .collect(groupingBy(Student::getBan));                          // toList() 생략가능
+                .collect(groupingBy(Student::getBan));                          // toList() 생략가능    (import static java.util.stream.Collectors.*;)
 
 
         for (List<Student> ban : stuByBan.values()) {
@@ -127,8 +127,11 @@ public class CollectEx_4 {
         Map<Integer, Map<Integer, List<Student>>> stuByHakAndBan = Stream.of(stuArr)    // 학년, 반
                 .collect(groupingBy(Student::getHak, groupingBy(Student::getBan)));
 
-        for (Map<Integer, List<Student>> hak : stuByHakAndBan.values()) {   // 반\
+        for (Map<Integer, List<Student>> hak : stuByHakAndBan.values()) {   // key :반, value: 학생들
 //             Collection<List<Student>> values = hak.values();
+//            for (List<Student> value : values) {
+//                System.out.println("value = " + value);
+//            }
             for (List<Student> ban : hak.values()) {    // 1반, 2반, ... roop
                 for (Student s : ban) {
                     System.out.println(s);

@@ -79,7 +79,7 @@ public class CollectEx_3 {
 
         System.out.printf("1. 단순분할(성별로 분할)%n");
         Map<Boolean, List<Student>> stuBySex = Stream.of(stuArr)
-                .collect(Collectors.partitioningBy(Student::isMale));                       // Collectors.partitioningBy 인자 1
+                .collect(Collectors.partitioningBy(Student::isMale));                       // Collectors.partitioningBy 인자 1 (내부 Collectors.toList() 생략 가능)
 
         List<Student> maleStudent = stuBySex.get(true);
         List<Student> femaleStudent = stuBySex.get(false);
