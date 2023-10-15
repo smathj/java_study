@@ -12,8 +12,19 @@ public class StreamEx2_6 {
                 new Book("가", 2000, 1),
                 new Book("라", 3000, 4),
                 new Book("마", 1000, 5),
+                new Book("바", 3000, 6),
                 new Book("다", 4000, 2)
         );
+
+        // 복습 1
+        /*
+        list.stream()
+                // .sorted(Comparator.comparing(b1 -> b1.getPrice()).reversed())     // 람다식 에러
+                .sorted(Comparator.comparing(Book::getPrice).reversed()
+//                        .thenComparing(Book::getName).reversed()
+                        .thenComparing(Book::getSeq))            // 메서드참조
+                .forEach(System.out::println);
+*/
 
         list.stream()
                 .sorted((s1,s2) -> s1.getName().compareTo(s2.getName()))        // 이름 오름차순
@@ -22,8 +33,6 @@ public class StreamEx2_6 {
 //                .sorted(Comparator.comparing(Book::getSeq))                   // v2. 시퀀스 오름차순
                 .sorted(Comparator.comparing(Book::getSeq).reversed())          // v1. 시퀀스 내림차순
                 .forEach(System.out::println);
-
-
     }
 }
 
