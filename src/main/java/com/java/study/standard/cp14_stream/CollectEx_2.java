@@ -53,6 +53,20 @@ public class CollectEx_2 {
         System.out.println("totalScore = " + totalScore);
 
 
+        // ! MyTest - 시작
+/*
+        Optional<Student> v1 = Stream.of(stuArr)
+                .collect(Collectors.maxBy(Comparator.comparingInt(value -> value.getTotalScore())));
+
+        Student v2 = Stream.of(stuArr)
+                .collect(
+                        Collectors.collectingAndThen(
+                                Collectors.maxBy(Comparator.comparingInt(value -> value.getTotalScore())), Optional::get
+                        )
+                );
+
+*/
+        // ! MyTest - 끝
 
         // Max
         Optional<Student> topStudent = Stream.of(stuArr)
