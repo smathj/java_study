@@ -26,8 +26,8 @@ class ThreadEx14_1 extends Thread {
             try {
                 Thread.sleep(1000); // 1초 지연
             } catch(InterruptedException e) {
-                // slepp에 의해 스레드가 잠시 멈춘상태에서 interrupt 를 호출하면
-                // InterruptedException 이 발생되고 쓰레드의 interrupted 상태는 false 로 자동 초기화 된다
+                // ! slepp에 의해 스레드가 잠시 멈춘상태에서 interrupt 를 호출하면
+                // ! InterruptedException 이 발생되고 쓰레드의 interrupted 상태는 false 로 자동 초기화 된다
                 e.printStackTrace();
             }
         }
