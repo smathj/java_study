@@ -34,13 +34,10 @@ class Customer implements Runnable {
     @Override
     public void run() {
         while (true) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-            }
+            try { Thread.sleep(100); } catch (InterruptedException e) { }
             String name = Thread.currentThread().getName();
-            table.remove(food);
             System.out.println(name + " ate a " + food);
+            table.remove(food);
 
         }
     }
@@ -108,6 +105,7 @@ class Table {
 
     public void remove(String dishName) {
         lock.lock();
+
         String name = Thread.currentThread().getName();
         try {
             while (dishes.size() == 0) {
@@ -124,7 +122,7 @@ class Table {
                 for (int i = 0; i < dishes.size(); i++) {
                     if (dishName.equals(dishes.get(i))) {
                         dishes.remove(i);
-                        forCust.signal();   // notify();   // 잠자고 있는 COOK을 꺠우기 위함
+                        forCook.signal();   // notify();   // 잠자고 있는 COOK을 꺠우기 위함
                     }
                 }
 
