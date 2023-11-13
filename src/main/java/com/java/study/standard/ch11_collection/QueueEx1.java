@@ -65,6 +65,8 @@ public class QueueEx1 {
         if (q.size() > MAX_SIZE) {
             q.remove();
         }
+
+        // offer, remove
     }
 
 }
