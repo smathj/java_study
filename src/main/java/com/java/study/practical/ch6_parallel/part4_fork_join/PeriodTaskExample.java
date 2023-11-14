@@ -1,10 +1,10 @@
-package com.java.study.practical.ch6;
+package com.java.study.practical.ch6_parallel.part4_fork_join;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import static com.java.study.practical.ch6.ExecutorServiceExample.*;
+import static com.java.study.practical.ch6_parallel.part4_fork_join.ExecutorServiceExample.*;
 
 public class PeriodTaskExample {
 
