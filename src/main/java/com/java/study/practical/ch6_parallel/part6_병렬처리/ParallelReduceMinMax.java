@@ -1,4 +1,4 @@
-package com.java.study.practical.ch6_parallel.part4_fork_join;
+package com.java.study.practical.ch6_parallel.part6_병렬처리;
 
 import java.util.Arrays;
 import java.util.List;
