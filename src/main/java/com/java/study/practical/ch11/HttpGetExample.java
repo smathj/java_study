@@ -18,7 +18,7 @@ public class HttpGetExample {
         // HttpRequest를 정의
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .uri(URI.create(url))
-//                .header("Content-Tpye", "application/json")
+                .header("Content-Tpye", "application/json")
                 .GET()
                 .build();
 
