@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -41,6 +42,9 @@ public class 한우정액공개자료 {
 
         driver.get(url);
 
+        LocalDateTime dateTime = LocalDateTime.now();
+        int year = dateTime.getYear();
+
         try {
             Thread.sleep(2000);
             List<WebElement> trElementList = driver.findElements(By.cssSelector("table.board02 tr"));
@@ -49,7 +53,7 @@ public class 한우정액공개자료 {
             for (WebElement trElement : trElementList) {
                 WebElement tdElement = trElement.findElement(By.cssSelector("td.le"));
                 String text = tdElement.getText();
-                if (text.startsWith("한우정액 공개자료")) {
+                if (text.startsWith("한우정액 공개자료") && text.contains(String.valueOf(year))) {
                     System.out.println("text = " + text);
                     WebElement aElement = tdElement.findElement(By.tagName("a"));
                     System.out.println("aElement = " + aElement);
