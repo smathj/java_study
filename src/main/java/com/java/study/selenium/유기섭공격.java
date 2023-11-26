@@ -72,6 +72,7 @@ public class 유기섭공격 {
 
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException("");
         } finally {
             Thread.sleep(5000);
             driver.quit();
