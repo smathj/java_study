@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * ! 비육돈 생체 100kg당 생산비 (년 2008~2022)
@@ -29,8 +28,8 @@ public class Test03 {
 
         // Initialize ChromeDriver
         WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
 
         String url = "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1EE305&conn_path=I2";
         driver.get(url);
@@ -110,6 +109,7 @@ public class Test03 {
             List<List<String>> outerList = new ArrayList<>();
             List<WebElement> trList = getDomList(wait,"#mainTable tbody tr");
             for (WebElement trElement : trList) {
+                Thread.sleep(1000);
                 List<WebElement> tdElementList = getDomList(wait, "td");
 
                 List<String> innerList = new ArrayList<>();
@@ -167,12 +167,12 @@ public class Test03 {
         }
     }
 
-    public static WebElement getDom(WebDriverWait wait, String selector) {
+    public static WebElement getDom(WebDriverWait wait, String selector) throws InterruptedException {
         WebElement webElement = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(selector)));
         return webElement;
     }
 
-    public static List<WebElement> getDomList(WebDriverWait wait, String selector) {
+    public static List<WebElement> getDomList(WebDriverWait wait, String selector) throws InterruptedException {
         List<WebElement> webElementList = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(selector)));
         return webElementList;
     }

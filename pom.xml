@@ -102,6 +102,11 @@
             <version>3.141.59</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20210307</version> <!-- Update the version if needed -->
+        </dependency>
 
     </dependencies>
 
