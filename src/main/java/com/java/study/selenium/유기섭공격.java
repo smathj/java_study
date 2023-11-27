@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -36,14 +35,15 @@ public class 유기섭공격 {
     private static void attackMessage() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win64\\chromedriver.exe");
 
-        String url = "https://nid.naver.com/user2/help/idInquiry?m=viewInputUserInfo&token_help=AWhDbnhhJRAPypU3";
+//        String url = "https://nid.naver.com/user2/help/idInquiry?m=viewInputUserInfo&token_help=AWhDbnhhJRAPypU3";
+        String url = "https://www.naver.com/";
 
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(false);     // false : gui, true: none
 
         // Initialize ChromeDriver
         WebDriver driver = new ChromeDriver(options);
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+
 
         driver.get(url);
 
@@ -58,6 +58,13 @@ public class 유기섭공격 {
 
 
         try {
+
+            WebElement aTag = driver.findElement(By.cssSelector("a.MyView-module__link_more___sbxGh"));
+            aTag.click();
+
+            WebElement findId = driver.findElement(By.cssSelector("button.id_item"));
+            findId.click();
+
 
             WebElement phoneNm = driver.findElement(By.id("phoneNm"));
             phoneNm.sendKeys(userName);
