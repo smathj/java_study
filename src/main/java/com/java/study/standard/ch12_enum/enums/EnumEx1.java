@@ -1,4 +1,4 @@
-package com.java.study.standard.ch12.enums;
+package com.java.study.standard.ch12_enum.enums;
 
 enum Direction {
     EAST, SOUTH, WEST, NORTH

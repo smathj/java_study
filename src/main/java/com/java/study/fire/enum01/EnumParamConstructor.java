@@ -3,7 +3,7 @@ package com.java.study.fire.enum01;
 enum Person3 {
     MAN(29), WOMAN(25);
 
-    int age;
+    private int age;
     private Person3(int age) {
         this.age = age;
     }
@@ -19,7 +19,9 @@ enum Person3 {
 
 public class EnumParamConstructor {
     public static void main(String[] args) {
-        System.out.println(Person3.MAN);
-        System.out.println(Person3.WOMAN);
+        Person3 man = Person3.MAN;
+        System.out.println(man);
+        Person3 woman = Person3.WOMAN;
+        System.out.println(woman);
     }
 }

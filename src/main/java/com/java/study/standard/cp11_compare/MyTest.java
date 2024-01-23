@@ -18,13 +18,21 @@ public class MyTest {
         System.out.println("people = " + people);
         lineLog();
 
-        // 오름 차순 정렬
+        // ! ------------------
+        // ! 오름 차순 정렬
+        // ! ------------------
         // v1.
         people.sort((o1, o2) -> {
+
+            // 왼쪽이 오른쪽보다 크다, 그래서 자리를 바꾼다
             if(o1.getAge() > o2.getAge()) {
                 return  1;
+
+            // 오른쪽이 왼쪽보다 크다, 그래서 자리를 바꾼다
             } else if(o1.getAge() < o2.getAge()) {
                 return -1;
+
+            // 왼쪽, 오른쪽이 서로 같다, 자리를 바꾸지 않는다
             } else {
                 return 0;
             }
@@ -35,16 +43,23 @@ public class MyTest {
         System.out.println("[나이-오름차순] people = " + people);
         lineLog();
 
-
-        // 내림 차순 정렬
+        // ! ------------------
+        // ! 내림 차순 정렬
+        // ! ------------------
         people.sort((o1, o2) -> {
             // v1.
+
             if(o1.getAge() > o2.getAge()) {
-                return  1 * -1;
+                return  -1;
+                
+
             } else if(o1.getAge() < o2.getAge()) {
-                return -1* -1;
+                return 1;
+
+
             } else {
                 return 0;
+
             }
             // v2.
 //            return o2.getAge().compareTo(o1.getAge());     // (정렬은 내부 기본 셋팅을 따른다)

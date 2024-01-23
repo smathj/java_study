@@ -24,5 +24,16 @@ public class DateTimeFormatterDemo {
         System.out.println(date.format(fm1));
         System.out.println(date.format(fm2));
         System.out.println(date.format(fm3));
+
+
+        // LocalDateTime 사용
+        System.out.println();
+        LocalDateTime today = LocalDateTime.now();
+        String format1 = today.format(fm1);
+        String format2 = today.format(fm2);
+        System.out.println("format1 = " + format1);
+        System.out.println("format2 = " + format2);
+
+
     }
 }
