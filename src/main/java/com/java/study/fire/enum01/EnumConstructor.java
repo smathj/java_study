@@ -8,16 +8,22 @@ enum Person2 {
     }
 
 
-    @Override
-    public String toString() {
-        return "I am a dog person";
-    }
+//    @Override
+//    public String toString() {
+//        return "I am a dog person";
+//    }
+
+
 }
 
 
 public class EnumConstructor {
     public static void main(String[] args) {
-        System.out.println(Person2.MAN);
-        System.out.println(Person2.WOMAN);
+        Person2 man = Person2.MAN;
+        System.out.println("man = " + man);
+        System.out.println("man.name() = " + man.name());
+        Person2 woman = Person2.WOMAN;
+        System.out.println("woman = " + woman);
+        System.out.println("woman.name() = " + woman.name());
     }
 }

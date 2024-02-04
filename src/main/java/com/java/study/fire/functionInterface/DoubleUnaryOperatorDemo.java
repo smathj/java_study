@@ -9,5 +9,13 @@ public class DoubleUnaryOperatorDemo {
         System.out.println("1cm = " + cti.applyAsDouble(1.0) + "inch");
         System.out.println("1inch = " + itc.applyAsDouble(1.0) + "cm");
 
+        // applyAsDouble 구현
+        DoubleUnaryOperator duo = (double doubleParam) -> doubleParam * doubleParam;
+        double v = duo.applyAsDouble(2);
+        System.out.println("v = " + v);
+
+
+
+
     }
 }
