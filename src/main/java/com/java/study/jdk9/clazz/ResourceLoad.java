@@ -14,6 +14,5 @@ public class ResourceLoad {
         System.out.println("stream = " + stream);
 
 
-
     }
 }
