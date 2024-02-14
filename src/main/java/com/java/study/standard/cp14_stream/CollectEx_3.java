@@ -114,6 +114,8 @@ public class CollectEx_3 {
         Map<Boolean, Student> topScoreBySex2 = Stream.of(stuArr)
                 .collect(
                         Collectors.partitioningBy(
+                                // Collectors.maxBy(Comparator.comparingInt(Student::getScore) 를 Collectors.collectingAndThen(xxx, Optional::get)로 감사줌
+                                // xxx 자리에 Collectors.maxBy(Comparator.comparingInt(Student::getScore)
                                 Student::isMale, Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingInt(Student::getScore)), Optional::get)
                         )
                 );
