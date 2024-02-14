@@ -34,6 +34,7 @@ public class Test1 {
         bookList.add(new Book("이것이뷰다", "뷰출판사", 3000, "뷰개발자", true));
         bookList.add(new Book("리액트의정석", "프론트출판사", 4200, "프론트개발자", true));
         bookList.add(new Book("뷰의정석", "프론트출판사", 6000, "프론트개발자", true));
+        bookList.add(new Book("타입스크립트", "프론트출판사", 5000, "프론트개발자", false));
 
 
 
@@ -114,7 +115,7 @@ public class Test1 {
         }
 
 
-        
+
 
         Map<Boolean, Map<String, Book>> soldOutAndBrandAndMaxPrice = bookList.stream()
                 .collect(Collectors.partitioningBy(Book::isSoldOut,
