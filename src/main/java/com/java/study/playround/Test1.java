@@ -38,6 +38,39 @@ public class Test1 {
 
 
 
+        System.out.println("====== 정렬이 안된 모든책 책 ======");
+        for (Book book : bookList) {
+            System.out.println(book);
+        }
+        System.out.println();
+
+
+
+        System.out.println("====== 가격 오름차순 정렬된 모든책 책 ======");
+        Collections.sort(bookList, (o1, o2) -> o1.getPrice() - o2.getPrice());
+        for (Book book : bookList) {
+            System.out.println(book);
+        }
+        System.out.println();
+
+        System.out.println("====== 가격 내림차순 정렬된 모든책 책 ======");
+        Collections.sort(bookList, (o1, o2) -> o2.getPrice() - o1.getPrice());
+        for (Book book : bookList) {
+            System.out.println(book);
+        }
+        System.out.println();
+
+
+        System.out.println("====== 가격 내림차순, 책 제목 오름차순 정렬된 모든책 책 ======");
+        Collections.sort(bookList, (o1, o2) -> o2.getPrice() - o1.getPrice());
+        // 마지막 정렬조건이 제일 우세
+        Collections.sort(bookList, (o1, o2) -> o1.getBookName().length() - o2.getBookName().length());
+        for (Book book : bookList) {
+            System.out.println(book);
+        }
+        System.out.println();
+
+
         System.out.println("====== 제일 비싼 책 ======");
         Book maxBookV1 = bookList.stream()
                 .collect(Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingInt(Book::getPrice)), Optional::get));
