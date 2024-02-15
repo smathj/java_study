@@ -65,7 +65,12 @@ public class CollectEx_2 {
                         )
                 );
 
+        Student maxStudent = Stream.of(stuArr)
+                .collect(Collectors.maxBy(Comparator.comparingInt(obj -> obj.getTotalScore()))).orElse(null);
+        System.out.println("maxStudent = " + maxStudent);
 */
+
+
         // ! MyTest - 끝
 
         // Max
