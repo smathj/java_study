@@ -37,6 +37,11 @@ public class StringFormatTest {
         System.out.println(String.format("소수 값 세자리, 나머지는 0으로 채우기 : %.3f", dv1));
 
 
+        System.out.println("------------------------------------------");
+        System.out.println(String.format("소수 값 세자리, 나머지는 0으로 채우기 : %.03f", dv1));
+        System.out.println("------------------------------------------");
+
+
 
 
 
