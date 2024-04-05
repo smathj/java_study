@@ -79,6 +79,15 @@ public class Test1 {
         System.out.println();
 
 
+        System.out.println("============= Test ======================");
+        Optional<Book> collect = bookList.stream()
+                .collect(Collectors.maxBy(Comparator.comparingInt(Book::getPrice)));
+        Book book1 = collect.get();
+        System.out.println("book1 = " + book1);
+        System.out.println("============= Test ======================");
+
+        System.out.println();
+
         Book maxBookV2 = bookList.stream()
                         .collect(Collectors.collectingAndThen(Collectors.maxBy(Comparator.comparingInt(Book::getPrice)), bookOption -> bookOption.get()));
 

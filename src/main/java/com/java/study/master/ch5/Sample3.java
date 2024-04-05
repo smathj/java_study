@@ -25,10 +25,20 @@ public class Sample3 {
         studentList.add(kim2);
 
         // sort
+
+        // 오름 차순 정렬
+        studentList.stream()
+                .distinct()
+                .sorted((o1, o2) -> o1.getScore() - o2.getScore())
+                .forEach(System.out::println);
+
+
+        // 내림 차순 정렬
         studentList.stream()
                 .distinct()
                 .sorted((o1, o2) -> o2.getScore() - o1.getScore())
                 .forEach(System.out::println);
+
 
         // collect
         List<Student> collect = studentList.stream()
