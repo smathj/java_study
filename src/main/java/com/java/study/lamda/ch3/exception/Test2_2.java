@@ -45,13 +45,17 @@ public class Test2_2 {
         Runnable debit = unchecked(() -> a.debit(amount));
         Runnable credit = unchecked(() -> b.credit(amount));
 
+        // 람다식을 호출 하는 곳
+        runInSequence(debit, credit);
+
+/*
         try {
             // 람다식을 호출 하는 곳
             runInSequence(debit, credit);
         } catch(Exception e) {
             // 잔고를 검증하고 롤백
         }
-
+ */
 
     }
 
@@ -68,14 +72,20 @@ public class Test2_2 {
         };
     }
 
-    public static void runInSequence(Runnable first, Runnable second) throws Exception {
+
+    public static void runInSequence(Runnable first, Runnable second) {
 
 
         // 신규 스레드 생성
         new Thread(() -> {
-            System.out.println("신규 스레드 생성");
-            first.run();    // 하나의 작업 실행(순차)
-            second.run();   // 하나의 작업 실행(순차)
+            try {
+                System.out.println("신규 스레드 생성");
+                first.run();    // 하나의 작업 실행(순차)
+                second.run();   // 하나의 작업 실행(순차)
+            } catch(Exception e) {
+                System.out.println("여기서 비동기에 대한 예외처리를 해주면 된다");
+            }
+
         }).start();
 
     }
