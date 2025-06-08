@@ -1,0 +1,32 @@
+메서드 카테고리별 정리
+
+🚀 생성 메서드
+
+supplyAsync() - 결과 반환하는 비동기 작업
+runAsync() - 결과 없는 비동기 작업
+completedFuture() - 즉시 완료된 Future
+
+🔄 변환 메서드
+
+thenApply() - 결과 변환 (Function)
+thenAccept() - 결과 소비 (Consumer)
+thenRun() - 다음 작업 (Runnable)
+
+🤝 조합 메서드
+
+thenCombine() - 두 Future 결과 조합
+allOf() - 모든 Future 완료 대기
+anyOf() - 가장 빠른 Future 완료 대기
+
+✅ 완료 확인
+
+join() - 완료까지 대기 (unchecked)
+get() - 완료까지 대기 (checked)
+getNow() - 즉시 결과 가져오기
+isDone() - 완료 여부 확인
+
+🛡️ 예외 처리
+
+handle() - 성공/실패 모두 처리
+exceptionally() - 예외 발생시에만 처리
+whenComplete() - 완료 후 로깅/정리
