@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "Customer",
+  "namespace": "com.java.study.kafka.avro",
+  "fields": [
+    {
+      "name": "customerID",
+      "type": "int"
+    },
+    {
+      "name": "customerName",
+      "type": "string"
+    }
+  ]
+}
